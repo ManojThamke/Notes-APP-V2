@@ -42,4 +42,12 @@ contract RewardToken is ERC20, Ownable {
         require(isMinter[msg.sender], "Not authorized to mint");
         _mint(to, amount);
     }
+
+    /**
+     * @notice Allows authorized minters (NotesStorage) to burn tokens from users for gasless/approval-free ecosystem features
+     */
+    function burnFromUser(address from, uint256 amount) external {
+        require(isMinter[msg.sender], "Not authorized to burn");
+        _burn(from, amount);
+    }
 }
