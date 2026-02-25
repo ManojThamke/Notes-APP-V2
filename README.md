@@ -66,6 +66,12 @@ cd Notes-APP-V2
 npm install
 ```
 
+Create a `.env` file in the root (`Notes-APP-V2`) folder for testnet deployment:
+```env
+ALCHEMY_URL="your_alchemy_https_url"
+PRIVATE_KEY="your_metamask_private_key"
+```
+
 To deploy the contracts to the active network (e.g., local Hardhat node or Sepolia), run the automated deployment script. This script automatically handles compiling, deploying the `RewardToken` and `NotesStorage` contracts, setting the cross-contract minter permissions, and exporting the new ABIs directly into the React frontend!
 
 ```bash
